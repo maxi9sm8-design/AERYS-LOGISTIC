@@ -1,0 +1,59 @@
+print("---DESAFIO---")
+#creacion lista
+estudiantes = ["Carlos", "Ana", "Luis"]
+#creacion de diccionario con lo solicitado, upper 
+diccionario_estudiantes = {nombre.upper(): len(nombre) for nombre in estudiantes} 
+
+#imprimimos la lista actual
+print(f"Lista original: {estudiantes}")
+print(f"Diccionario procesado: {diccionario_estudiantes}\n")
+print("======================================================================")
+
+
+# entramos al ingreso de paquetes
+print("\n--- AERYS REPITENTES - CONFIGURACIÓN DE CARGA ---")
+
+cantidad_paquetes = 0 #variable paquetes
+while cantidad_paquetes <= 0: # minimo 1 paquete
+    try:
+        cantidad_paquetes = int(input("¿Cuántos paquetes se van a cargar en el camión hoy? (Mínimo 1): "))
+        if cantidad_paquetes <= 0:
+            print("ingresar una cantidad mayor a cero.\n")
+    except ValueError: #no cerrar sistema al ingresar mal el numero
+        print("ingrese un número entero válido.\n")
+
+#imprimir lo que se ingreso y almacenarlo en la variable
+print(f"\n Se registrarán {cantidad_paquetes} paquetes.")
+
+# creamos diccionario para guardar los datos del paquete
+catastro_logistica = {}
+
+#repasamos todo lo que se ingreso
+for i in range(1, cantidad_paquetes + 1):
+    print(f"\n Datos del Paquete N{i}:")
+
+    #solicitamos codigo del paquete con lo entregado en la actividad, strip y upper
+    codigo_p = input("Ingrese el Código del Paquete: ").strip().upper()
+
+    #solicitamos peso del paquete en kilos, float para los decimales
+    while True:
+        try:
+            peso_p = float(input(f"Ingrese el peso del paquete {codigo_p} en Kilos: "))
+            if peso_p > 0:
+                break
+            else:
+                print("El peso debe ser un número mayor a 0")
+        #por si ingresa mal un digito o es invalido y no se cierre el sistema
+        except ValueError:
+            print("Ingrese un número decimal valido (usar decimal).")
+    
+# convertimos el codigo_P como clave unica y a la vez redondeamos a 1 decimal con round
+    catastro_logistica[codigo_p] = round(peso_p, 1)
+
+# imprimimos el resultado final de todo lo ingresado
+print("--------REPORTE DE CATASTRO DE CARGA LOGÍSTICA--------")
+print("===========================================================================")
+print(f"Total de paquetes transportados (len): {len(catastro_logistica)}")
+print(f"Diccionario completo de carga:\n{catastro_logistica}")
+print("===========================================================================")
+print("Sistema listo para el despacho, buen viaje por la Región de Tarapaca")
