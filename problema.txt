@@ -1,0 +1,27 @@
+ "Tienes una lista de nombres de estudiantes ["Carlos", "Ana", "Luis"]. Genera un 
+diccionario donde la clave sea el nombre del alumno en mayúsculas y el valor sea su cantidad de 
+letras (usando len())." recuerden usar la funcion para mayúscula
+Vamos a programar el módulo de carga para un sistema de monitoreo ambiental en la región de 
+Tarapacá. El usuario debe indicar cuántas estaciones meteorológicas registrará hoy, y luego el 
+sistema generará el diccionario correspondiente.
+
+Sistema de Catastro de Carga Logística Contexto: La agencia de transporte Aerys Logistics 
+necesita automatizar el registro de los camiones de carga antes de que salgan a ruta por la 
+Región de Tarapacá. Tu misión es crear el prototipo del sistema que reciba los datos de los 
+paquetes.
+Instrucciones del Problema:
+Validación Inicial (while): El programa debe solicitar al operador que ingrese cuántos paquetes 
+se van a cargar en el camión hoy. El sistema no puede continuar si el usuario ingresa 0 o un 
+número negativo. Debe seguir preguntando hasta que se ingrese una cantidad válida (mínimo 1).
+Llenado Automatizado (for): Utilizando la cantidad aprobada en el paso anterior, el programa 
+debe ejecutar un bucle para solicitar los datos de cada paquete.
+Construcción del Diccionario: En cada vuelta del bucle, se debe pedir:
+El Código del Paquete (ej: P-101, P-102), el cual funcionará como la Clave del diccionario.
+El Peso del Paquete en Kilos (puede tener decimales), el cual funcionará como el Valor.
+Cierre y Reporte: Al finalizar el ingreso de todos los datos, el programa debe mostrar en 
+pantalla:
+El diccionario completo con todos los paquetes registrados.
+La cantidad total de paquetes transportados utilizando la función len().
+Recuerden limpiar los textos de los códigos con .strip().upper() para evitar errores de tipeo.
+Para el peso del paquete, recuerden transformar el input() a un tipo de dato decimal (float) y usar 
+round() a 1 decimal para la presentación final
